@@ -1,0 +1,39 @@
+server:
+  port: 51804
+spring:
+  data:
+    mongodb:
+      host: 122.51.159.21
+      port: 27017
+      database: hmtt
+  #      username: sh
+  #      password: 123000
+  #      authentication-database: admin
+  application:
+    name: leadnews-search
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.122.133:8848
+      config:
+        server-addr: 192.168.122.133:8848
+        file-extension: yml
+
+  kafka:
+    bootstrap-servers: 192.168.122.133:9092,192.168.122.133:9093,192.168.122.133:9094
+
+    consumer:
+      group-id: ${spring.application.name}
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+xxl:
+  job:
+    admin:
+      addresses: http://127.0.0.1:8012/xxl-job-admin
+    executor:
+      appname: hmtt
+      logpath: /data/applogs/xxl-job/jobhandler
+      logretentiondays: 3
+      port: 9999
+  token: 7b226964223a312c22757365726e616d65223a2261646d696e222c2270617373776f7264223a226531306164633339343962613539616262653536653035376632306638383365222c22726f6c65223a312c227065726d697373696f6e223a6e756c6c7d

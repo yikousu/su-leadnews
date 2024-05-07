@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.su.common.exception.ExceptionCatch, \
+  com.su.common.aliyun.GreenTextScan, \
+  com.su.common.aliyun.GreenImageScan, \
+  com.su.common.tess4j.Tess4jUtils, \
+  com.su.common.redis.CacheService, \
+  com.su.common.swagger.SwaggerConfiguration

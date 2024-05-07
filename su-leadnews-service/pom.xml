@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>su-leadnews</artifactId>
+        <groupId>com.su</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <packaging>pom</packaging>
+
+    <description>
+        管理所有微服务
+        对用户表或者用户相关表的增删改查 Leadnews-article
+        对文章表或者文章相关表的增删改查 leadnews-user
+    </description>
+
+    <modules>
+        <module>leadnews-user</module>
+        <module>leadnews-article</module>
+        <module>leadnews-wemedia</module>
+        <module>su-leadnews-schedule</module>
+        <module>leadnews-search</module>
+        <module>leadnews-behavior</module>
+    </modules>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>su-leadnews-service</artifactId>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- 引入依赖模块 -->
+        <dependency>
+            <groupId>com.su</groupId>
+            <artifactId>su-leadnews-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.su</groupId>
+            <artifactId>su-leadnews-model</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.su</groupId>
+            <artifactId>su-leadnews-feign-api</artifactId>
+        </dependency>
+        <!-- Spring boot starter -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>2.2.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>2.2.5.RELEASE</version>
+        </dependency>
+
+
+    </dependencies>
+
+</project>

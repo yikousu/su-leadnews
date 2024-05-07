@@ -1,0 +1,36 @@
+server:
+  port: 51802
+spring:
+  application:
+    name: leadnews-article
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.122.133:8848
+      config:
+        server-addr: 192.168.122.133:8848
+        file-extension: yml
+  kafka:
+    bootstrap-servers: 192.168.122.133:9092,192.168.122.133:9093,192.168.122.133:9094
+    producer:
+      retries: 10
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: ${spring.application.name}
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+  freemarker:
+    cache: false #关闭模板缓存，方便测试
+    settings:
+      template_update_delay: 0 #检查模板更新延迟时间，设置为0表示立即检查，如果时间大于0会有缓存不方便进行模板测试
+    suffix: .ftl #指定Freemarker模板文件的后缀名
+    template-loader-path: classpath:/templates #模板存放位置
+
+minio:
+  accessKey: minio
+  secretKey: xxxxxxx
+  bucket: hmtt
+  endpoint: http://122.51.159.21:9000
+  readPath: http://122.51.159.21:9000

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.su.wemedia.mapper.WmNewsMapper">
+
+    <update id="downUp">
+        update wm_news
+        set enable=#{enable}
+        where id=#{id}
+        <if test="enable==1">and enable = 0</if>
+        <if test="enable==0">and enable = 1</if>
+    </update>
+
+</mapper>
+
+

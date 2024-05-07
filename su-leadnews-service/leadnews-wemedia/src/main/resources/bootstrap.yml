@@ -1,0 +1,36 @@
+server:
+  port: 51803
+
+spring:
+  application:
+    name: leadnews-wemedia
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.122.133:8848
+      config:
+        server-addr: 192.168.122.133:8848
+        file-extension: yml
+  kafka:
+    bootstrap-servers: 192.168.122.133:9092,192.168.122.133:9093,192.168.122.133:9094
+    producer:
+      retries: 10
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+minio:
+  accessKey: minio
+  secretKey: xxxxxxx
+  bucket: hmtt
+  endpoint: http://122.51.159.21:9000
+  readPath: http://122.51.159.21:9000
+
+aliyun:
+  AccessKey: xxxxxxx
+  AccessKeySecret: xxxxxxx
+  scenes: porn,terrorism,ad,qrcode,logo,live
+
+tess4j:
+  datapath: D:/Applications/a_java/tess4j
+  language: chi_sim

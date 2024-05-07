@@ -1,0 +1,43 @@
+package com.su.model.common.search.vos;
+
+import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+@Data
+public class SearchArticleVo {
+
+    // 文章id
+    private Long id;
+    // 文章标题
+    private String title;
+    // 文章发布时间
+    private Date publishTime;
+    // 文章布局
+    private Integer layout;
+    // 封面
+    private String images;
+    // 作者id
+    private Long authorId;
+    // 作者名词
+    private String authorName;
+    //静态url
+    private String staticUrl;
+    //文章内容
+    private String content;
+    //状态   区分上下架
+    private int enable;
+
+    //自动补全
+    private List<String> suggestion;
+
+    //根据标题 作者自动补全搜索
+    public void initSuggestion(){
+        suggestion = new ArrayList<String>();
+        suggestion.add(this.title);
+        suggestion.add(this.authorName);
+    }
+
+}

@@ -1,0 +1,17 @@
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.element {
+    width: 100px;
+    height: 100px;
+    background-color: greenyellow;
+    animation: rotate 2s linear infinite;
+}
